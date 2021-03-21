@@ -76,7 +76,7 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
     todo.title = title;
     todo.deadline = new Date(deadline);
 
-    return response.status(201).send({ sucess: "TODO successfully updated" });
+    return response.status(200).send({ sucess: "TODO successfully updated" });
   }
 
   return response.status(404).send({ error: "TODO not found" });
@@ -91,14 +91,25 @@ app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
   if (todo) {
     todo.done = true;
 
-    return response.status(201).send({ sucess: "TODO successfully updated" });
+    return response.status(200).send(user.todos);
   }
 
   return response.status(404).send({ error: "TODO not found" });
 });
 
 app.delete("/todos/:id", checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { user } = request;
+  const { id } = request.params;
+
+  const todo = user.todos.find((todo) => todo.id === id);
+
+  if (todo) {
+    user.todos.splice(todo, 1);
+
+    return response.status(200).json(user.todos);
+  }
+
+  return response.status(404).send({ error: "TODO not found" });
 });
 
 module.exports = app;

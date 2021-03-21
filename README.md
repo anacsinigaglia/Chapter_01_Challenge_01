@@ -4,7 +4,7 @@ First challenge of Chapter I from Rocketseat's Node course.
 
 # Requisites:
 
-- [] Deve ser possível criar um user
+- [x] Deve ser possível criar um user
 - [] Deve ser possível criar um novo TODO de um user
 - [] Deve ser possível obter lista de TODOs de um user
 - [] Deve ser possível atualizar dados de title e deadline de TODOS de um user
@@ -13,7 +13,7 @@ First challenge of Chapter I from Rocketseat's Node course.
 
 # Business rules:
 
-- [] Não deve ser possível cadastrar um user com username já existente
+- [x] Não deve ser possível cadastrar um user com username já existente
 - [] Não deve ser possível criar TODOs em um user não existente
 - [] Não deve ser possível buscar TODOS de um user não existente
 - [] Não deve ser possível atualizar dados de um TODO não existente

@@ -2,10 +2,10 @@
 
 First challenge of Chapter I from Rocketseat's Node course.
 
-# Requisitos:
+# Requisites:
 
 - []
 
-# Regras de negócio:
+# Business rules:
 
 - []
